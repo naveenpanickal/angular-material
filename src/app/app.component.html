@@ -176,4 +176,19 @@ Import MatBadgeModule from@angular/material/badge-->
 <br>
 <hr>
 <br>
-<!--SIDEBAR-->
+<!--SIDEBAR: Import ModeSidenavModule-->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav (opened)="log('opened')" (closed)= "log('closed')" mode="side" [(opened)]="opened">Sidenav</mat-sidenav>
+    <mat-sidenav-content>Main
+        <button (click)="opened=!opened">Toggle Opened</button>
+        <button (click)="sidenav.open()">Open</button>
+        <button (click)= "sidenav.close()">Close</button>
+        <Button (click)= "sidenav.toggle()">Toggle</Button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<!--There are 3 methods to open or close a sidebar.
+        1. Setting a boolean value in the ts file, set the value of opened attribute to that booelan value.
+        2. Using a template variable (here sidenav) and running open() and close() functions on them
+        3. Using the toggle function on the template variable
+    We can also check whether the sidebar is opened in the ts file by listening to opened event on sidenav-->
+

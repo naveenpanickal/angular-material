@@ -4,7 +4,8 @@ import {
   MatButtonToggleModule, 
   MatIconModule,
   MatProgressSpinnerModule,
-  MatToolbarModule} from "@angular/material";
+  MatToolbarModule,
+  MatSidenavModule} from "@angular/material";
 import{ MatBadgeModule} from "@angular/material/badge"
 
 const MaterialComponents = [
@@ -13,7 +14,8 @@ const MaterialComponents = [
   MatIconModule,
   MatBadgeModule,
   MatProgressSpinnerModule,
-  MatToolbarModule]
+  MatToolbarModule,
+  MatSidenavModule]
 
 @NgModule({
   imports: [MaterialComponents], // Doesn't require declaration as we are only concerned with importing and exporting of components.
