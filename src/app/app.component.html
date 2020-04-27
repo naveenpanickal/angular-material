@@ -1,4 +1,5 @@
 <button mat-raised-button>Hello World</button>
+<hr>
 <br>
 <!-- Typography: Deals with the style and appearance of texts
 Here we are using the material display classes
@@ -24,4 +25,27 @@ Here we are using the material display classes
     <h3>This is a heading for h3</h3>
     <h4>This is a heading for h4</h4>
 </div>
+</div>
+<hr>
+<br>
+<!--Buttons: To use button material, we must import MatbuttonModule to material.module.ts and add it to MaterialComponents array.-->
+<div> <!--Normal buttons-->
+<button mat-button>Click Me!</button>
+<button mat-raised-button>Click Me!</button>
+<button mat-flat-button>Click Me!</button>
+<button mat-stroked-button>Click Me!</button>    
+</div>
+<div> <!--Round buttons-->
+    <button mat-icon-button>Icon</button>
+    <button mat-fab>Fab</button>
+    <button mat-mini-fab>MiniFab</button>
+</div>
+<div><!--Button colors-->
+    <button color="primary" mat-button>Primary</button>
+    <button color="accent" mat-button>Accent</button>
+    <!--Disable ripple effect while clicking-->
+    <button color="warn" disableRipple mat-button>Warn</button>
+    <button color="primary" mat-raised-button>Primary</button>
+    <button color="accent" mat-raised-button>Accent</button>
+    <button color="warn" mat-raised-button>Warn</button>
 </div>

@@ -4,4 +4,4 @@ To use angular material,
 3. Add it to the import array.
 4. Use it in the HTML
 
-** It is better to create a seperat module to deal with importing and exporting comonents
+** It is better to create a seperate module to deal with importing and exporting components also create an array to store imported materials.
