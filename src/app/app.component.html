@@ -49,3 +49,43 @@ Here we are using the material display classes
     <button color="accent" mat-raised-button>Accent</button>
     <button color="warn" mat-raised-button>Warn</button>
 </div>
+<hr>
+<br>
+<!--Button toggle-->
+<div>
+    <mat-button-toggle #toggleBtn>Toggle</mat-button-toggle>
+    <!--We can access the state of the toggle button-->
+    {{toggleBtn.checked}}
+    <!--This results n the case where the button value is false by default. We can chang it by adding checked to the toggle button. We can also disable the rippll effect while clicking-->
+    <br>
+    <mat-button-toggle #togglebtn checked disableRipple>Toggle</mat-button-toggle>
+    {{togglebtn.checked}}
+    <!--We can aslo disable the button using disabled attribute-->
+    <br>
+    <mat-button-toggle #toggleButton disabled>Toggle</mat-button-toggle>
+    <!--We can access the state of the toggle button-->
+    {{toggleButton.checked}}
+</div>
+<br>
+    <!--If we want to add a group of buttons-->
+
+<div><div>
+    <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+        <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="React">React</mat-button-toggle>
+        <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+       <!--We are assigning matButtonToggleVariable totemplate variable toggleGroup so as to access the values of the buttons that we click -->
+       {{toggleGroup.value}}
+</div>
+<br>
+  <div>
+      <!--As of now, they behave like radio buttonsie we can only select one at a time. To select multiple buttons, add multiple attribute to the toggle-group element. This is what we do in the case of a checkbox -->
+      <mat-button-toggle-group #toggledGroup="matButtonToggleGroup" multiple>
+        <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="React">React</mat-button-toggle>
+        <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggledGroup.value}}
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule} from "@angular/material";
+import {MatButtonModule, MatButtonToggleModule} from "@angular/material";
 
-const MaterialComponents = [MatButtonModule]
+const MaterialComponents = [MatButtonModule, MatButtonToggleModule]
 
 @NgModule({
   imports: [MaterialComponents], // Doesn't require declaration as we are only concerned with importing and exporting of components.
