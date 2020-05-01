@@ -99,7 +99,7 @@ Got to materials.io and select resources, then select icons. You can see a list 
 <hr>
 <br>
 <!--5.Badges: To display notifications or unread messages etc.
-Import MatBadgeModule from@angular/material/badge-->
+    Import MatBadgeModule from@angular/material/badge-->
 <div>
     <div>
         <span matBadge="5">Notifications</span>
@@ -119,7 +119,7 @@ Import MatBadgeModule from@angular/material/badge-->
 </div>
 <br>
 <br>
-<!--We can change the size of te notifications-->
+    <!--We can change the size of te notifications-->
 <div>
     <div>
         <span matBadge="5" matBadgeSize = "small">Notifications</span>
@@ -135,7 +135,7 @@ Import MatBadgeModule from@angular/material/badge-->
 </div>
 <br>
 <br>
-<!--Changing colors also chnaging the overlap of the badge-->
+    <!--Changing colors also chnaging the overlap of the badge-->
 <div>
     <span matBadge="5" matBadgeColor="primary">Notifications</span>
 </div>
@@ -144,21 +144,21 @@ Import MatBadgeModule from@angular/material/badge-->
     <span matBadge="5" matBadgeColor="accent">Notifications</span>
 </div>
 <br>
-<!--overlap disable-->
+    <!--overlap disable-->
 <div>
     <span matBadge="5" matBadgeColor="warn" matBadgeOverlap="false">Notifications</span>
 </div>
 <br>
 <br>
-<!--Property binding and conditional binding-->
+    <!--Property binding and conditional binding-->
 <div>
     <span matBadge="5" [matBadge]= "notifications" [matBadgeHidden]="notifications === 0">Notifications</span>
 </div>
 <hr>
 <br>
 <!--6.Progress spinner: Import MatProgressSpinnerModule-->
-<!-- <mat-progress-spinner value="40"></mat-progress-spinner> This will be static and the value shows the percenyage of spinner that is on display. -->
-<!--We use the below one while loading a data-->
+    <!-- <mat-progress-spinner value="40"></mat-progress-spinner> This will be static and the value shows the percenyage of spinner that is on display. -->
+    <!--We use the below one while loading a data-->
 <mat-spinner *ngIf="showSpinner" color ="accent"></mat-spinner>
 <button (click)="loadData()">Load Data</button>
 <hr>
@@ -176,7 +176,7 @@ Import MatBadgeModule from@angular/material/badge-->
 <br>
 <hr>
 <br>
-<!--SIDEBAR: Import ModeSidenavModule-->
+<!--8.SIDEBAR: Import ModeSidenavModule-->
 <mat-sidenav-container>
     <mat-sidenav #sidenav (opened)="log('opened')" (closed)= "log('closed')" mode="side" [(opened)]="opened">Sidenav</mat-sidenav>
     <mat-sidenav-content>Main
@@ -186,9 +186,108 @@ Import MatBadgeModule from@angular/material/badge-->
         <Button (click)= "sidenav.toggle()">Toggle</Button>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<!--There are 3 methods to open or close a sidebar.
+    <!--There are 3 methods to open or close a sidebar.
         1. Setting a boolean value in the ts file, set the value of opened attribute to that booelan value.
         2. Using a template variable (here sidenav) and running open() and close() functions on them
         3. Using the toggle function on the template variable
     We can also check whether the sidebar is opened in the ts file by listening to opened event on sidenav-->
+<hr>
+<br>
+<!--9. Menu-->
+<mat-menu #appMenu="matMenu" xPosition="after" yPosition='below'>
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">FrontEnd</button>
+    <button mat-menu-item>BackEnd</button>
+</mat-menu>
+    <!--A mat-menu element doesnot render anything itself. It needs to triggered by a UI element or programmatically.
+    So here we give a template variable reference to the mat-menu and assign that variable with mat-menu directive.
+    Now we link the button with template reference variable using the matMenuTriggerFor directive .
+    xPosition and yPosition attribute control the position of the menu-->
+<button class="center" mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
 
+    <!--nested menu-->
+<mat-menu #subMenu="matMenu">
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>React</button>
+    <button mat-menu-item>Vue</button>
+</mat-menu>
+<br>
+    <!--Lazy rendering-->
+<mat-menu #lazyMenu="matMenu">
+    <ng-template matMenuContent let-name="name" let-hobby="hobby">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Hobby is {{hobby}}</button>
+        <button mat-menu-item>Log out {{name}}</button>
+    </ng-template>
+</mat-menu>
+<button 
+    mat-raised-button 
+    [matMenuTriggerData]="{ name: 'Naveen', hobby: 'Piano' }" 
+    [matMenuTriggerFor]="lazyMenu">Naveen</button>
+<button 
+    mat-raised-button 
+    [matMenuTriggerData]="{ name: 'NavCorp.', hobby: 'web development' }" 
+    [matMenuTriggerFor]="lazyMenu">NavCorp.</button>
+    <!--matMenuTriggerData is used so that we can dynamically pass data to whichever element we are triggering -->
+<br>
+<hr>
+<br>
+<!--10.List: Import MatListModule-->
+<mat-list dense>
+    <mat-list-item>Item 1</mat-list-item>
+    <mat-list-item>Item 2</mat-list-item>
+    <mat-list-item>Item 3</mat-list-item>
+</mat-list>
+<br>
+    <!--Navigation list-->
+<mat-nav-list>
+    <a mat-list-item href="#">Home</a>
+    <a mat-list-item href="#">About</a>
+    <a mat-list-item href="#">Services</a>
+</mat-nav-list>
+<br>
+<mat-list>
+    <mat-list-item>
+        <mat-icon mat-list-icon>home</mat-icon>
+        <h3 matLine>Heading</h3>
+        <p matLine>Line</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <h3 matLine>Heading 2</h3>
+        <p matLine>Line 2</p>
+    </mat-list-item>
+</mat-list>
+    <!--Also import MatDividerModule to make a division between list items-->
+<hr>
+<br>
+<!--11.Grid List: It is a 2-dim list view that arranges cells into grid based layout. Import MatGridListModule and add it to the array-->
+<mat-grid-list cols="2">
+    <mat-grid-tile rowspan= "2">Tile 1</mat-grid-tile>
+    <mat-grid-tile colspan="2">Tile 2</mat-grid-tile>
+    <mat-grid-tile>Tile 3</mat-grid-tile>
+    <mat-grid-tile>Tile 4</mat-grid-tile>
+</mat-grid-list>
+    <!--cols="2" means that there could only be two elements in a row. We can also individually change the row span or column span of tiles-->
+    <!---->
+    <hr>
+    <br>
+    <!--Grid height-->
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile >Tile 1</mat-grid-tile>
+        <mat-grid-tile>Tile 2</mat-grid-tile>
+        <mat-grid-tile>Tile 3</mat-grid-tile>
+        <mat-grid-tile>Tile 4</mat-grid-tile>
+    </mat-grid-list>
+    <hr><br>
+    <!--Normally rowheight = column width, but we can change this using rowheight attribute. You can either 
+        1.Give a random value like rowheight = 100px or it can be set as a ratio to col width. 
+        2. Here rowheight="2:1" which means the height of row is half of col width.
+        3.give rowheight ="fit" which would fit the container.and can give the height of the container-->
+        <mat-grid-list cols="2" rowHeight="fit" style="height: 200px" gutterSize="10px">
+            <mat-grid-tile >Tile 1</mat-grid-tile>
+            <mat-grid-tile>Tile 2</mat-grid-tile>
+            <mat-grid-tile>Tile 3</mat-grid-tile>
+            <mat-grid-tile>Tile 4</mat-grid-tile>
+        </mat-grid-list>
+    <!--Gutter size: is the spacing between cells.-->
