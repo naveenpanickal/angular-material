@@ -290,4 +290,42 @@ Got to materials.io and select resources, then select icons. You can see a list 
             <mat-grid-tile>Tile 3</mat-grid-tile>
             <mat-grid-tile>Tile 4</mat-grid-tile>
         </mat-grid-list>
+        <hr>
+        <br>
     <!--Gutter size: is the spacing between cells.-->
+<!--Expansion panels: Import MatExpansionModule-->
+<mat-accordion>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Angular Fundamentals
+        </mat-panel-title>
+        <mat-panel-description>
+            Total Duration: 3 hours
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the panel content. Add course details.</p>
+    <mat-action-row>
+        <button mat-button>Enroll</button>
+    </mat-action-row>
+</mat-expansion-panel>
+<!--Accordions: we are universally applying accordion to both above and below panel so that when one panel opens, the other collapse.
+If you want to set multiple panels open at a time, set multy ="true" in mat-accordion. You can also hide toggle symbols using hideToggle -->
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Angular Material
+        </mat-panel-title>
+        <mat-panel-description>
+            Total Duration: 2 hours
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the panel content. Add course details.</p>
+    <mat-action-row>
+        <button mat-button>Enroll</button>
+    </mat-action-row>
+</mat-expansion-panel>
+</mat-accordion>
+<br>
+<!--check the rest-->
+<hr><br>
