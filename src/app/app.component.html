@@ -309,8 +309,8 @@ Got to materials.io and select resources, then select icons. You can see a list 
         <button mat-button>Enroll</button>
     </mat-action-row>
 </mat-expansion-panel>
-<!--Accordions: we are universally applying accordion to both above and below panel so that when one panel opens, the other collapse.
-If you want to set multiple panels open at a time, set multy ="true" in mat-accordion. You can also hide toggle symbols using hideToggle -->
+    <!--Accordions: we are universally applying accordion to both above and below panel so that when one panel opens, the other collapse.
+    If you want to set multiple panels open at a time, set multy ="true" in mat-accordion. You can also hide toggle symbols using hideToggle -->
 <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>
@@ -327,5 +327,48 @@ If you want to set multiple panels open at a time, set multy ="true" in mat-acco
 </mat-expansion-panel>
 </mat-accordion>
 <br>
-<!--check the rest-->
 <hr><br>
+<!--Cards-->
+<mat-card>
+    <mat-card-title>
+        Card Title
+    </mat-card-title>
+    <mat-card-content>
+        This is the card content
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-flat-button>Login</button>
+    </mat-card-actions>
+</mat-card>
+    <!--align attribute is usd to align the action segments to the right side of the card.-->
+<br>
+<!--Tabs-->
+<mat-tab-group #tabRef (selectedTabChange)="logChange(tabRef.selectedIndex)">
+    <mat-tab label="Angular">Angular Content</mat-tab>
+    <mat-tab label="React">React Content</mat-tab>
+    <mat-tab label="Vue">Vue Contnt</mat-tab>
+</mat-tab-group>
+{{tabRef.selectedIndex}}
+<br>
+    <!--You could also know which tab is active at any point of time sing sslected index property. If you want to execute something while changing to a tab, we can use selectedTabChange event-->
+<hr><br>
+<!--Stepper-->
+    <!--Horizontal stepper-->
+    <mat-horizontal-stepper linear>
+        <mat-step label= "Shipping Address" completed ="true">
+            <p>Shipping Address Details</p>
+        </mat-step>
+        <mat-step label= "Billing Address" completed= "false">
+            <p>Billing Address Details</p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label= "Place Order" completed ="false">
+            <p>Order Details</p>
+        </mat-step>
+    </mat-horizontal-stepper>
+    <br>
+    <!--Stepper also supports a previous and next button to jump ahead. We can also limit jumping to linear jumping ie we can only jump from one to next only after finishing that. You cant skip. For this add linear to mat-horizontal stepper and use completed attribute on individuals steps. We can change this to vertical stepper just by changing "horizontal" to "vertical"-->
+    <br>

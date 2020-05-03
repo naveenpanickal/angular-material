@@ -21,4 +21,7 @@ export class AppComponent {
   log(state){
     console.log(state);
   }
+  logChange(index){
+    console.log(index);
+  }
 }
