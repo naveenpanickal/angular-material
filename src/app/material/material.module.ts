@@ -15,7 +15,8 @@ import {
   MatTabsModule,
   MatStepperModule,
   MatFormFieldModule,
-  MatInputModule} from "@angular/material";
+  MatInputModule,
+  MatSelectModule} from "@angular/material";
 import{ MatBadgeModule} from "@angular/material/badge"
 
 const MaterialComponents = [
@@ -35,7 +36,8 @@ const MaterialComponents = [
   MatTabsModule,
   MatStepperModule,
   MatFormFieldModule,
-  MatInputModule]
+  MatInputModule,
+  MatSelectModule]
 
 @NgModule({
   imports: [MaterialComponents], // Doesn't require declaration as we are only concerned with importing and exporting of components.

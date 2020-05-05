@@ -10,6 +10,7 @@ export class AppComponent {
   notifications = 2;
   showSpinner = false;
   opened = false;
+  selectedValue: string; // select
 
   loadData(){
     this.showSpinner= true;

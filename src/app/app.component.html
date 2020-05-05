@@ -399,5 +399,35 @@ Got to materials.io and select resources, then select icons. You can see a list 
             <input matInput required>
             <mat-hint align="end">Min 5 characters</mat-hint>
         </mat-form-field>
-<!--Look up error messages-->
+    <!--Look up error messages-->
 <br><hr><br>
+<!--Select-->
+<mat-form-field>
+    <mat-label>Topic</mat-label>
+    <mat-select [(value)]= "selectedValue" multiple>
+        <mat-option value= "angular">Angular</mat-option>
+        <mat-option value= "react">React</mat-option>
+        <mat-option value= "vue">Vue</mat-option>
+        <mat-option>None</mat-option>
+    </mat-select>
+</mat-form-field>
+{{selectedValue}}
+    <!--We can track the value of selected components-->
+    <!--Groupin related objects under a sub-heading. 
+    Also we can select multiple components-->
+    <br>
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <mat-select>
+            <mat-option>None</mat-option>
+            <mat-optgroup label="Web">
+                <mat-option value= "angular">Angular</mat-option>
+                <mat-option value= "react">React</mat-option>
+                <mat-option value= "vue">Vue</mat-option>
+            </mat-optgroup>
+            <mat-optgroup label="Mobile">
+                <mat-option value= "ionic">Ionic</mat-option>
+                <mat-option value= "reactnative">React Native</mat-option>
+            </mat-optgroup>
+           </mat-select>
+    </mat-form-field>
