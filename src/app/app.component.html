@@ -370,5 +370,34 @@ Got to materials.io and select resources, then select icons. You can see a list 
         </mat-step>
     </mat-horizontal-stepper>
     <br>
-    <!--Stepper also supports a previous and next button to jump ahead. We can also limit jumping to linear jumping ie we can only jump from one to next only after finishing that. You cant skip. For this add linear to mat-horizontal stepper and use completed attribute on individuals steps. We can change this to vertical stepper just by changing "horizontal" to "vertical"-->
+        <!--Stepper also supports a previous and next button to jump ahead. We can also limit jumping to linear jumping ie we can only jump from one to next only after finishing that. You cant skip. For this add linear to mat-horizontal stepper and use completed attribute on individuals steps. We can change this to vertical stepper just by changing "horizontal" to "vertical"-->
     <br>
+    <hr>
+    <br>
+    <!--Input: Import MatFormFieldModule and MatInputModule-->
+    <mat-form-field floatLabel = "auto" appearance= "legacy">
+        <mat-label>Name</mat-label>
+        <input matInput required>
+        <mat-hint align="end">Min 5 characters</mat-hint>
+    </mat-form-field>
+        <!--By default, the label floats to the top. But we can change that using floatLabel. "required" is used to mark n input field as mandatory or you can hide hat using hideRequiredMarker on mat-form-field . The default appearance is legacy, but there is still 3 more types-->
+        <br>
+        <mat-form-field floatLabel = "auto" appearance= "standard">
+            <mat-label>Name</mat-label>
+            <input matInput required>
+            <mat-hint align="end">Min 5 characters</mat-hint>
+        </mat-form-field>
+        <br>
+        <mat-form-field floatLabel = "auto" appearance= "fill" color = "accent">
+            <mat-label>Name</mat-label>
+            <input matInput required>
+            <mat-hint align="end">Min 5 characters</mat-hint>
+        </mat-form-field>
+        <br>
+        <mat-form-field floatLabel = "auto" appearance = "outline" color= "warn">
+            <mat-label>Name</mat-label>
+            <input matInput required>
+            <mat-hint align="end">Min 5 characters</mat-hint>
+        </mat-form-field>
+<!--Look up error messages-->
+<br><hr><br>
